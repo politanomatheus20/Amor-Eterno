@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Bronze/dourado — extraído do texto da logo */
+  --color-bronze-50: #faf6ee;
+  --color-bronze-100: #f0e6d2;
+  --color-bronze-200: #e0c99e;
+  --color-bronze-300: #cba86e;
+  --color-bronze-400: #a6854a;
+  --color-bronze-500: #8a6c39;
+  --color-bronze-600: #6b5127;
+  --color-bronze-700: #574121;
+  --color-bronze-800: #40301a;
+  --color-bronze-900: #2b2011;
+
+  /* Verde-oliva — extraído da coroa de louros */
+  --color-olive-50: #f5f6ec;
+  --color-olive-100: #e8ebd0;
+  --color-olive-200: #cfd5a2;
+  --color-olive-300: #aeb772;
+  --color-olive-400: #9aa356;
+  --color-olive-500: #888c48;
+  --color-olive-600: #6d7139;
+  --color-olive-700: #54572c;
+  --color-olive-800: #3d4020;
+  --color-olive-900: #282a15;
+
+  /* Bege/areia — extraído dos animais */
+  --color-sand-50: #fbf8f2;
+  --color-sand-100: #f5eee0;
+  --color-sand-200: #e9dbbf;
+  --color-sand-300: #dac59a;
+  --color-sand-400: #c8b78b;
+  --color-sand-500: #b39d6c;
+  --color-sand-600: #93805a;
+  --color-sand-700: #726342;
+  --color-sand-800: #4a4130;
+  --color-sand-900: #302a1f;
+
+  --color-cream: #fdfbf6;
+  --color-ink: #2b2011;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+  section[id] {
+    scroll-margin-top: 96px;
+  }
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+}
