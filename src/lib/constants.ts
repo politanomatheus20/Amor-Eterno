@@ -1,9 +1,8 @@
-// TODO: substituir pelos dados reais assim que definidos com o sócio
 export const CONTACT = {
-  phone: "[TELEFONE]",
-  whatsappNumber: "55SEUNUMERO", // TODO: formato 55DDDNUMERO, ex: 5518999999999
-  email: "contato@amoreternopets.com.br",
-  address: "[ENDEREÇO, CIDADE - UF]",
+  phone: "+55 11 94490-6565",
+  whatsappNumber: "5511944906565",
+  email: "amoreternopetss@gmail.com",
+  address: "Rua Tenente Azevedo, 199, sala 04 - Aclimação, São Paulo - SP, CEP 01528-000",
   hours: "Atendimento 24h, todos os dias",
 };
 

@@ -40,7 +40,7 @@ export default function Valores() {
         aria-hidden="true"
       />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
           {VALUES.map((value, index) => (
             <motion.div
               key={value.title}
@@ -48,15 +48,15 @@ export default function Valores() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-2xl bg-sand-50 border border-sand-200 p-6 sm:p-7 hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="rounded-2xl bg-sand-50 border border-sand-200 p-4 sm:p-7 hover:shadow-lg hover:-translate-y-1 transition-all"
             >
-              <div className="h-12 w-12 rounded-xl bg-olive-100 flex items-center justify-center mb-5">
-                <value.icon size={24} className="text-olive-700" />
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-olive-100 flex items-center justify-center mb-3 sm:mb-5">
+                <value.icon size={20} className="text-olive-700 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="font-display text-lg text-bronze-700 mb-2">
+              <h3 className="font-display text-base sm:text-lg text-bronze-700 mb-1.5 sm:mb-2">
                 {value.title}
               </h3>
-              <p className="text-sm text-ink/70 leading-relaxed">
+              <p className="text-xs sm:text-sm text-ink/70 leading-relaxed">
                 {value.description}
               </p>
             </motion.div>

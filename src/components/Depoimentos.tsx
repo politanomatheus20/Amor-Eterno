@@ -104,16 +104,12 @@ export default function Depoimentos() {
         <div className="relative">
           <div
             ref={scrollerRef}
-            className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 px-[7.5%] sm:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {TESTIMONIALS.map((testimonial, index) => (
-              <motion.div
+            {TESTIMONIALS.map((testimonial) => (
+              <div
                 key={testimonial.name}
                 data-card
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
                 className="shrink-0 basis-[85%] sm:basis-[46%] lg:basis-[31%] snap-start rounded-2xl bg-sand-50 border border-sand-200 p-7"
               >
                 <Quote size={28} className="text-olive-400 mb-4" />
@@ -128,7 +124,7 @@ export default function Depoimentos() {
                     {testimonial.name}
                   </span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Amphora, MapPinned, MessageCircle } from "lucide-react";
+import { Amphora, MapPinned } from "lucide-react";
+import { WhatsAppIcon } from "./icons/SocialIcons";
 import { whatsappLink } from "../lib/constants";
 
 const SERVICES = [
@@ -46,7 +47,7 @@ export default function Servicos() {
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 max-w-2xl mx-auto">
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.title}
@@ -54,24 +55,24 @@ export default function Servicos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-2xl border border-sand-200 p-6 sm:p-7 flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="rounded-2xl border border-sand-200 p-4 sm:p-7 flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all"
             >
-              <div className="h-12 w-12 rounded-xl bg-bronze-50 flex items-center justify-center mb-5">
-                <service.icon size={24} className="text-bronze-600" />
+              <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-xl bg-bronze-50 flex items-center justify-center mb-3 sm:mb-5">
+                <service.icon size={20} className="text-bronze-600 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="font-display text-lg text-bronze-700 mb-2">
+              <h3 className="font-display text-base sm:text-lg text-bronze-700 mb-1.5 sm:mb-2">
                 {service.title}
               </h3>
-              <p className="text-sm text-ink/70 leading-relaxed mb-5 flex-1">
+              <p className="text-xs sm:text-sm text-ink/70 leading-relaxed mb-3 sm:mb-5 flex-1">
                 {service.description}
               </p>
               <a
                 href={whatsappLink(`Olá! Gostaria de saber mais sobre o serviço de ${service.title}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-olive-600 hover:bg-olive-700 text-cream px-5 py-2.5 rounded-full text-sm font-semibold transition-colors shadow-sm"
+                className="inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-olive-600 hover:bg-olive-700 text-cream px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-colors shadow-sm text-center"
               >
-                <MessageCircle size={16} />
+                <WhatsAppIcon size={14} className="sm:w-4 sm:h-4 shrink-0" />
                 {service.tag}
               </a>
             </motion.div>

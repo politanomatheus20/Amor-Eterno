@@ -74,55 +74,61 @@ export default function Contato() {
           </h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-5 gap-3 sm:gap-6 lg:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-2 space-y-6"
+            className="col-span-2 flex flex-col gap-3 sm:gap-6"
           >
-            <div className="flex items-start gap-4">
-              <div className="h-11 w-11 rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
-                <Phone size={20} className="text-olive-700" />
+            <div className="grid grid-cols-1 gap-3 sm:gap-4">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 min-w-0">
+                <div className="h-7 w-7 sm:h-11 sm:w-11 rounded-lg sm:rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
+                  <Phone size={13} className="text-olive-700 sm:w-5 sm:h-5" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] sm:text-sm text-ink/50">Telefone / WhatsApp</p>
+                  <p className="text-xs sm:text-base font-medium text-bronze-700 break-words">{CONTACT.phone}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-sm text-ink/50">Telefone / WhatsApp</p>
-                <p className="font-medium text-bronze-700">{CONTACT.phone}</p>
+              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 min-w-0">
+                <div className="h-7 w-7 sm:h-11 sm:w-11 rounded-lg sm:rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
+                  <Mail size={13} className="text-olive-700 sm:w-5 sm:h-5" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] sm:text-sm text-ink/50">E-mail</p>
+                  <p className="text-xs sm:text-base font-medium text-bronze-700 break-words">{CONTACT.email}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="h-11 w-11 rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
-                <Mail size={20} className="text-olive-700" />
+              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 min-w-0">
+                <div className="h-7 w-7 sm:h-11 sm:w-11 rounded-lg sm:rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
+                  <MapPin size={13} className="text-olive-700 sm:w-5 sm:h-5" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] sm:text-sm text-ink/50">Endereço</p>
+                  <p className="text-xs sm:text-base font-medium text-bronze-700 break-words">{CONTACT.address}</p>
+                </div>
               </div>
-              <div>
-                <p className="text-sm text-ink/50">E-mail</p>
-                <p className="font-medium text-bronze-700">{CONTACT.email}</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="h-11 w-11 rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
-                <MapPin size={20} className="text-olive-700" />
-              </div>
-              <div>
-                <p className="text-sm text-ink/50">Endereço</p>
-                <p className="font-medium text-bronze-700">{CONTACT.address}</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="h-11 w-11 rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
-                <Clock size={20} className="text-olive-700" />
-              </div>
-              <div>
-                <p className="text-sm text-ink/50">Horário</p>
-                <p className="font-medium text-bronze-700">{CONTACT.hours}</p>
+              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-4 min-w-0">
+                <div className="h-7 w-7 sm:h-11 sm:w-11 rounded-lg sm:rounded-xl bg-olive-100 flex items-center justify-center shrink-0">
+                  <Clock size={13} className="text-olive-700 sm:w-5 sm:h-5" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-[10px] sm:text-sm text-ink/50">Horário</p>
+                  <p className="text-xs sm:text-base font-medium text-bronze-700 break-words">{CONTACT.hours}</p>
+                </div>
               </div>
             </div>
 
-            <div className="rounded-2xl bg-sand-100 border border-sand-200 aspect-video flex items-center justify-center">
-              <p className="text-sm text-ink/50 px-6 text-center">
-                Mapa em breve — assim que o endereço for definido
-              </p>
+            <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-sand-200 aspect-square sm:aspect-video">
+              <iframe
+                title="Localização da Amor Eterno Pets"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(CONTACT.address)}&output=embed`}
+                className="h-full w-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </motion.div>
 
@@ -132,10 +138,10 @@ export default function Contato() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
             onSubmit={handleSubmit}
-            className="lg:col-span-3 bg-sand-50 border border-sand-200 rounded-3xl p-7 sm:p-9 space-y-5"
+            className="col-span-3 bg-sand-50 border border-sand-200 rounded-xl sm:rounded-3xl p-3 sm:p-9 space-y-3 sm:space-y-5"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-bronze-700 mb-2">
+              <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-bronze-700 mb-1 sm:mb-2">
                 Nome completo do responsável
               </label>
               <input
@@ -144,12 +150,12 @@ export default function Contato() {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
+                className="w-full min-w-0 rounded-lg sm:rounded-xl border border-sand-300 bg-white px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
                 placeholder="Seu nome completo"
               />
             </div>
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-bronze-700 mb-2">
+              <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-bronze-700 mb-1 sm:mb-2">
                 Telefone para contato
               </label>
               <input
@@ -158,26 +164,26 @@ export default function Contato() {
                 required
                 value={form.phone}
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
+                className="w-full min-w-0 rounded-lg sm:rounded-xl border border-sand-300 bg-white px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
                 placeholder="(00) 00000-0000"
               />
             </div>
 
             <div>
-              <span className="block text-sm font-medium text-bronze-700 mb-2">
+              <span className="block text-xs sm:text-sm font-medium text-bronze-700 mb-1 sm:mb-2">
                 Onde o seu pet está localizado?
               </span>
-              <p className="text-xs text-ink/60 mb-3">
+              <p className="text-[10px] sm:text-xs text-ink/60 mb-2 sm:mb-3">
                 Seu pet está em alguma clínica ou hospital veterinário?
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-2 sm:gap-3">
                 <button
                   type="button"
                   onClick={() => {
                     setAtClinic(true);
                     setLocationError(false);
                   }}
-                  className={`flex-1 rounded-xl border px-4 py-2.5 text-sm font-semibold transition-colors ${
+                  className={`flex-1 rounded-lg sm:rounded-xl border px-2 sm:px-4 py-1.5 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors ${
                     atClinic === true
                       ? "border-olive-600 bg-olive-600 text-cream"
                       : "border-sand-300 bg-white text-ink/70 hover:border-olive-400"
@@ -191,7 +197,7 @@ export default function Contato() {
                     setAtClinic(false);
                     setLocationError(false);
                   }}
-                  className={`flex-1 rounded-xl border px-4 py-2.5 text-sm font-semibold transition-colors ${
+                  className={`flex-1 rounded-lg sm:rounded-xl border px-2 sm:px-4 py-1.5 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors ${
                     atClinic === false
                       ? "border-olive-600 bg-olive-600 text-cream"
                       : "border-sand-300 bg-white text-ink/70 hover:border-olive-400"
@@ -201,19 +207,19 @@ export default function Contato() {
                 </button>
               </div>
               {locationError && (
-                <p className="text-xs text-red-600 mt-2">
+                <p className="text-[10px] sm:text-xs text-red-600 mt-1.5 sm:mt-2">
                   Selecione uma opção para continuar.
                 </p>
               )}
 
               {atClinic === true && (
-                <div className="mt-4 space-y-4">
+                <div className="mt-3 sm:mt-4 space-y-2.5 sm:space-y-4">
                   <input
                     type="text"
                     required
                     value={form.clinicName}
                     onChange={(e) => setForm({ ...form, clinicName: e.target.value })}
-                    className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
+                    className="w-full min-w-0 rounded-lg sm:rounded-xl border border-sand-300 bg-white px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
                     placeholder="Nome da clínica ou hospital veterinário"
                   />
                   <input
@@ -221,20 +227,20 @@ export default function Contato() {
                     required
                     value={form.clinicAddress}
                     onChange={(e) => setForm({ ...form, clinicAddress: e.target.value })}
-                    className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
+                    className="w-full min-w-0 rounded-lg sm:rounded-xl border border-sand-300 bg-white px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
                     placeholder="Endereço da clínica ou hospital veterinário"
                   />
                 </div>
               )}
 
               {atClinic === false && (
-                <div className="mt-4">
+                <div className="mt-3 sm:mt-4">
                   <input
                     type="text"
                     required
                     value={form.petAddress}
                     onChange={(e) => setForm({ ...form, petAddress: e.target.value })}
-                    className="w-full rounded-xl border border-sand-300 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
+                    className="w-full min-w-0 rounded-lg sm:rounded-xl border border-sand-300 bg-white px-2.5 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-olive-400"
                     placeholder="Endereço onde o pet está localizado"
                   />
                 </div>
@@ -242,17 +248,17 @@ export default function Contato() {
             </div>
 
             <div>
-              <span className="block text-sm font-medium text-bronze-700 mb-2">
+              <span className="block text-xs sm:text-sm font-medium text-bronze-700 mb-1 sm:mb-2">
                 Qual tipo de serviço você está precisando?
               </span>
-              <p className="text-xs text-ink/60 mb-3">Opcional, mas agiliza o atendimento.</p>
-              <div className="grid grid-cols-2 gap-3">
+              <p className="text-[10px] sm:text-xs text-ink/60 mb-2 sm:mb-3">Opcional, mas agiliza o atendimento.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                 {SERVICE_OPTIONS.map((option) => (
                   <button
                     key={option}
                     type="button"
                     onClick={() => setService(service === option ? null : option)}
-                    className={`rounded-xl border px-4 py-2.5 text-sm font-semibold transition-colors ${
+                    className={`rounded-lg sm:rounded-xl border px-2 sm:px-4 py-1.5 sm:py-2.5 text-xs sm:text-sm font-semibold transition-colors ${
                       service === option
                         ? "border-olive-600 bg-olive-600 text-cream"
                         : "border-sand-300 bg-white text-ink/70 hover:border-olive-400"
@@ -265,9 +271,9 @@ export default function Contato() {
             </div>
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 bg-olive-600 hover:bg-olive-700 text-cream px-6 py-3.5 rounded-full font-semibold transition-colors"
+              className="w-full inline-flex items-center justify-center gap-1.5 sm:gap-2 bg-olive-600 hover:bg-olive-700 text-cream px-3 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-base rounded-full font-semibold transition-colors"
             >
-              <Send size={18} />
+              <Send size={16} className="sm:w-[18px] sm:h-[18px] shrink-0" />
               Enviar via WhatsApp
             </button>
           </motion.form>

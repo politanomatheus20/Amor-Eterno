@@ -1,7 +1,24 @@
-import { MessageCircle } from "lucide-react";
 import logo from "../assets/logo.png";
-import { FacebookIcon, InstagramIcon } from "./icons/SocialIcons";
-import { CONTACT, whatsappLink } from "../lib/constants";
+import { InstagramIcon, TikTokIcon, YouTubeIcon } from "./icons/SocialIcons";
+import { CONTACT } from "../lib/constants";
+
+const SOCIAL_LINKS = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/amor.eternopetss?igsi=MWxkcDUzMWFhZWl5OA==",
+    icon: InstagramIcon,
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@amoreternopets",
+    icon: TikTokIcon,
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@AmorEternoCP",
+    icon: YouTubeIcon,
+  },
+];
 
 const NAV_LINKS = [
   { label: "Início", href: "#inicio" },
@@ -54,29 +71,18 @@ export default function Footer() {
         <div>
           <h4 className="font-display text-cream mb-4">Redes Sociais</h4>
           <div className="flex gap-3">
-            <a
-              href={whatsappLink("Olá! Vim pelo site da Amor Eterno Pets.")}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp"
-              className="h-10 w-10 rounded-full bg-cream/10 hover:bg-olive-500 flex items-center justify-center transition-colors"
-            >
-              <MessageCircle size={18} />
-            </a>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="h-10 w-10 rounded-full bg-cream/10 hover:bg-olive-500 flex items-center justify-center transition-colors"
-            >
-              <InstagramIcon size={18} />
-            </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="h-10 w-10 rounded-full bg-cream/10 hover:bg-olive-500 flex items-center justify-center transition-colors"
-            >
-              <FacebookIcon size={18} />
-            </a>
+            {SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="h-10 w-10 rounded-full bg-cream/10 hover:bg-olive-500 flex items-center justify-center transition-colors"
+              >
+                <social.icon size={18} />
+              </a>
+            ))}
           </div>
         </div>
       </div>

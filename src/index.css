@@ -47,10 +47,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 96px;
+    scroll-padding-top: 120px;
   }
   section[id] {
-    scroll-margin-top: 96px;
+    scroll-margin-top: 120px;
   }
   body {
     background-color: var(--color-cream);

@@ -58,7 +58,7 @@ export default function Planos() {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 sm:gap-8 max-w-4xl mx-auto">
           {PLANS.map((plan, index) => (
             <motion.div
               key={plan.name}
@@ -66,19 +66,19 @@ export default function Planos() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.12 }}
-              className={`relative rounded-3xl p-8 flex flex-col ${
+              className={`relative rounded-2xl sm:rounded-3xl p-4 sm:p-8 flex flex-col ${
                 plan.highlight
-                  ? "bg-bronze-700 text-cream shadow-xl scale-[1.02]"
+                  ? "bg-bronze-700 text-cream shadow-xl sm:scale-[1.02]"
                   : "bg-white border border-sand-200 text-ink"
               }`}
             >
               {plan.highlight && (
-                <span className="absolute -top-3 left-8 bg-olive-600 text-cream text-xs font-semibold px-4 py-1 rounded-full tracking-wide">
+                <span className="absolute -top-2.5 sm:-top-3 left-3 sm:left-8 bg-olive-600 text-cream text-[10px] sm:text-xs font-semibold px-2 sm:px-4 py-0.5 sm:py-1 rounded-full tracking-wide">
                   Mais escolhido
                 </span>
               )}
               <h3
-                className={`font-display text-2xl mb-1 ${
+                className={`font-display text-base sm:text-2xl mb-1 ${
                   plan.highlight ? "text-cream" : "text-bronze-700"
                 }`}
               >
@@ -86,37 +86,37 @@ export default function Planos() {
               </h3>
               <div className="mb-1">
                 <span
-                  className={`text-sm ${
+                  className={`text-xs sm:text-sm ${
                     plan.highlight ? "text-cream/70" : "text-ink/60"
                   }`}
                 >
                   a partir de
                 </span>
               </div>
-              <div className="flex items-baseline gap-1 mb-1">
+              <div className="flex items-baseline gap-1 mb-1 flex-wrap">
                 <span
-                  className={`text-lg ${
+                  className={`text-sm sm:text-lg ${
                     plan.highlight ? "text-cream/90" : "text-ink/70"
                   }`}
                 >
                   R$
                 </span>
-                <span className="font-display text-4xl">{plan.price}</span>
+                <span className="font-display text-xl sm:text-4xl">{plan.price}</span>
               </div>
               <p
-                className={`text-sm mb-6 ${
+                className={`text-xs sm:text-sm mb-3 sm:mb-6 ${
                   plan.highlight ? "text-cream/70" : "text-ink/60"
                 }`}
               >
                 {plan.installment}
               </p>
 
-              <ul className="space-y-3 mb-8 flex-1">
+              <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-8 flex-1">
                 {plan.benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-start gap-2.5 text-sm">
+                  <li key={benefit} className="flex items-start gap-1.5 sm:gap-2.5 text-xs sm:text-sm">
                     <Check
-                      size={18}
-                      className={`shrink-0 mt-0.5 ${
+                      size={14}
+                      className={`shrink-0 mt-0.5 sm:w-[18px] sm:h-[18px] ${
                         plan.highlight ? "text-olive-300" : "text-olive-600"
                       }`}
                     />
@@ -131,7 +131,7 @@ export default function Planos() {
                 href={whatsappLink(`Olá! Tenho interesse no plano de ${plan.name}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-semibold transition-colors ${
+                className={`inline-flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-base text-center rounded-full font-semibold transition-colors ${
                   plan.highlight
                     ? "bg-olive-500 hover:bg-olive-400 text-cream"
                     : "bg-bronze-600 hover:bg-bronze-700 text-cream"

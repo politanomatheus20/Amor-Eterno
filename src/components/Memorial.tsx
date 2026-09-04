@@ -20,83 +20,83 @@ const PETS = [
     photo: photoBidu,
     description:
       "Meu Bidu, você foi a luz mais pura que já passou pela minha vida. Cada olhar seu, cada abraço, cada sorriso me ensinou o que é amor de verdade.",
-    top: "60%",
-    left: "10%",
+    top: "8%",
+    left: "17%",
   },
   {
     name: "Luna",
     photo: photoLuna,
     description:
       "A melhor companhia que seus tutores poderiam ter. Viveu seus 10 lindos anos com doçura, meiguice, pureza e leveza.",
-    top: "22%",
+    top: "34%",
     left: "17%",
   },
   {
     name: "Zeus",
     photo: photoZeus,
     description: "Um cachorrinho muito amoroso e carinhoso. Sempre irá ficar na minha memória.",
-    top: "46%",
-    left: "24%",
+    top: "60%",
+    left: "17%",
   },
   {
     name: "Thor",
     photo: photoThor,
     description:
       "O amor em forma de cachorro. Viveu 15 anos com sua família, hoje a família toda sente sua falta.",
-    top: "14%",
-    left: "32%",
+    top: "86%",
+    left: "17%",
   },
   {
     name: "Bella",
     photo: photoBella,
     description:
       "A princesinha da família, sempre cheia de lacinhos lindos e muito amor para dar.",
-    top: "64%",
-    left: "39%",
+    top: "8%",
+    left: "50%",
   },
   {
     name: "Mel",
     photo: photoMel,
     description:
       "Momentos incríveis foram vividos ao seu lado, sua família sente saudades todos os momentos.",
-    top: "30%",
-    left: "46%",
+    top: "34%",
+    left: "50%",
   },
   {
     name: "Max",
     photo: photoMax,
     description: "Cada pulo, cada brincadeira, cada sorriso seu era pura felicidade.",
-    top: "54%",
-    left: "54%",
+    top: "60%",
+    left: "50%",
   },
   {
     name: "Duke",
     photo: photoDuke,
     description:
       "Meu Duke, sua força e sua nobreza escondiam um coração cheio de carinho. Cada olhar seu era proteção, cada gesto era amor puro.",
-    top: "12%",
-    left: "61%",
+    top: "86%",
+    left: "50%",
   },
   {
     name: "Lola",
     photo: photoLola,
     description: "Vou te levar sempre comigo, minha menina. Até um dia, meu amor.",
-    top: "40%",
-    left: "68%",
+    top: "8%",
+    left: "83%",
   },
   {
     name: "Amora",
     photo: photoAmora,
     description: "Minha Amora, sua doçura e seu jeitinho carinhoso enchiam a casa de amor.",
-    top: "66%",
-    left: "75%",
+    top: "34%",
+    left: "83%",
   },
   {
     name: "Simba",
     photo: photoSimba,
     description:
       "Você se foi, mas cada latido, cada correria, cada momento ao seu lado ficou guardado no meu coração para sempre.",
-    top: "20%",
+    top: "60%",
     left: "83%",
   },
   {
@@ -104,8 +104,8 @@ const PETS = [
     photo: photoToby,
     description:
       "Seu jeito calmo e seu olhar sereno traziam paz para os meus dias. Você foi companheiro fiel, discreto no amor mas gigante na presença.",
-    top: "48%",
-    left: "90%",
+    top: "86%",
+    left: "83%",
   },
 ];
 
@@ -170,7 +170,7 @@ export default function Memorial() {
           </p>
         </motion.div>
 
-        <div className="relative h-[620px] sm:h-[540px] md:h-[580px]">
+        <div className="relative h-[760px] sm:h-[720px] md:h-[700px]">
           {stars.map((star) => (
             <span
               key={star.id}
