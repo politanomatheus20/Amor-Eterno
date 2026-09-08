@@ -7,12 +7,27 @@ export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-    if (prefersReducedMotion) {
-      videoRef.current?.pause();
-    }
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Ensure muted is set as a property too — some browsers only honor
+    // autoplay reliably when muted is set via JS, not just the HTML attribute.
+    video.muted = true;
+
+    const tryPlay = () => {
+      video.play().catch(() => {
+        // Autoplay was blocked by the browser; resume on the first
+        // interaction so the video never gets stuck on a single frame.
+        const resume = () => {
+          video.play().catch(() => {});
+        };
+        window.addEventListener("pointerdown", resume, { once: true });
+        window.addEventListener("keydown", resume, { once: true });
+        window.addEventListener("touchstart", resume, { once: true });
+      });
+    };
+
+    tryPlay();
   }, []);
 
   return (
