@@ -120,16 +120,6 @@ export default function Contato() {
                 </div>
               </div>
             </div>
-
-            <div className="rounded-xl sm:rounded-2xl overflow-hidden border border-sand-200 aspect-square sm:aspect-video">
-              <iframe
-                title="Localização da Amor Eterno Pets"
-                src={`https://www.google.com/maps?q=${encodeURIComponent(CONTACT.address)}&output=embed`}
-                className="h-full w-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
           </motion.div>
 
           <motion.form
