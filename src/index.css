@@ -44,6 +44,41 @@
   --color-ink: #2b2011;
 }
 
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes twinkle-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.65;
+  }
+}
+
+.twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.twinkle-soft {
+  animation: twinkle-soft 3.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .twinkle,
+  .twinkle-soft {
+    animation: none;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

@@ -17,8 +17,8 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <Sobre />
         <Planos />
+        <Sobre />
         <Valores />
         <Servicos />
         <Memorial />
